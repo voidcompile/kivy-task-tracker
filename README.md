@@ -17,18 +17,6 @@ You can add unlimited tasks, track time spent on each task with a start/stop tim
 
 ---
 
-## Create and activate a virtual environment (recommended)
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
-
-## Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
 ## ▶️ Usage
 Run the application with:
 ```
