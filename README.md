@@ -17,14 +17,6 @@ You can add unlimited tasks, track time spent on each task with a start/stop tim
 
 ---
 
-## 📦 Installation
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/<your-username>/kivy-task-tracker.git
-cd kivy-task-tracker
-```
-
 ## Create and activate a virtual environment (recommended)
 python -m venv venv
 # Windows:
