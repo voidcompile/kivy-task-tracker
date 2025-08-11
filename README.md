@@ -7,13 +7,24 @@ You can add unlimited tasks, track time spent on each task with a start/stop tim
 ---
 
 ## ✨ Features
-- **Unlimited tasks per day** — Add as many tasks as you need.
-- **Start/Stop timers** for each task to measure your work time precisely.
-- **Description editor** to record what you did for each task.
-- **Day navigation** — Move to previous or next day to review or add tasks.
-- **Delete tasks** with confirmation popup to prevent accidental removal.
-- **Persistent local storage** in JSON format.
-- **Cross-platform** — Works on Windows, Linux, and macOS.
+
+**Unlimited daily tasks** — Add as many tasks as you want for any day.
+
+**Start/Stop timer per task** — Track exactly how long you work on each task.
+
+**Edit task descriptions** — Write detailed notes about what you did.
+
+**Delete tasks** — Remove tasks with a red delete button and confirmation.
+
+**Daily navigation** — Move between days (previous/next) to view or edit past or future days.
+
+**All Task Summary page** — View total work time per task across all days (e.g., “German: 4 days, 12 hours”).
+
+**Global stats on main screen** — See the number of active tasks and total time worked for the current day.
+
+**Persistent storage** — Data saved locally in JSON format, fully offline and private.
+
+**Futuristic dark theme** — Dark + neon blue interface with semi-transparent backgrounds for a modern sci-fi feel.
 
 ---
 
