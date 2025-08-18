@@ -6,118 +6,107 @@ You can add unlimited tasks, track time spent on each task with a start/stop tim
 
 ---
 
-## Release v1.2 — Summary
-✅ Added (New Features)
+## Kivy Task Tracker — v1.3
 
-Notepad (Daily Notepad)
+A lightweight offline task tracker built with Kivy (Python). Track unlimited tasks per day with start/stop timers, per-task descriptions, a daily notepad, aggregated summaries, CSV export — and now charts (line chart for hours-per-day + per-day pie charts).
 
-Added a notepad screen accessible from the menu for quick daily reminders.
+## 🚀 What’s new in v1.3
 
-Each note is saved per date in tasks_data.json (key _note).
+Charts screen:
 
-Quick access button Open Notepad added at the top of the main screen.
+Line chart: hours-per-day (x = date, y = hours).
 
-All Task Summary — readable card layout
+Daily pie charts: per-day task distribution (one pie per day).
 
-Redesigned summary screen: clean card layout, header for each task, days count, total hours, and per-day breakdown.
+Chart visuals use white backgrounds and cool / cold colors (blues/teals/purples).
 
-Rounded buttons + hover effect
+Charts are rendered with matplotlib (Agg) and saved as PNGs in charts_images/, then displayed inside the app.
 
-All buttons are now rounded with a smooth hover animation.
+UI and data flow improvements to integrate charts safely with the existing screens.
 
-A global HoverManager handles hover state efficiently with only one mouse listener.
+## 🧩 Features (summary)
 
-Neon / Space-themed dark background
+Unlimited daily tasks (add, rename in code, remove).
 
-Modern neon-dark "futuristic" theme with animated blue/purple blobs.
+Start / Stop timers per task (session times + saved totals).
 
-Export CSV (aggregated)
+Edit and save task descriptions (saved per day, per task).
 
-Added the ability to export aggregated task statistics into tasks_aggregated.csv.
+Daily Notepad (saved per date).
 
-Safe JSON handling & backups
+All Task Summary screen (card layout, per-day breakdown).
 
-safe_load_data function now prevents crashes if the JSON file is corrupted.
+Charts (line + pie) in menu — white background, cool colors.
 
-Automatic .backup.<timestamp> creation on failure.
+Export aggregated CSV (tasks_aggregated.csv).
 
-Error logging
+Persistent storage in tasks_data.json.
 
-All unexpected errors are logged to error.log for debugging.
+Neon/dark theme, rounded buttons with hover effects.
 
-Robust screen navigation
+Robust error logging (error.log) and safe JSON handling with automatic backups.
 
-Replaced direct switch_to() calls with safe_switch_to() for more stable navigation.
+## ⚙️ Requirements
 
-## 🐞 Fixed (Bug Fixes)
+Python 3.8+ recommended
 
-Double-trigger click issue resolved — buttons no longer trigger actions twice.
+[Kivy] installed (the app uses standard Kivy widgets)
 
-Fixed ScreenManagerException crashes when navigating back from Summary or Notepad.
+matplotlib required for charts:
 
-Fixed crashes when re-opening Summary multiple times in a row.
-
-Description editing text visibility — now uses black text on white background for clarity.
-
-Hidden menu panel — fully hidden when closed (width=0, opacity=0, disabled=True).
-
-Safe JSON recovery — corrupted tasks_data.json no longer crashes the app.
-
-## ⚠️ Known Issues
-
-Older Kivy versions may not render RoundedRectangle properly (fallback partially in place).
-
-HoverManager currently keeps references to all rounded buttons; dynamically removing many widgets may require unregister cleanup.
-
-Simultaneous multiple timers work but have not been heavily stress-tested.
-
-Task deletion is permanent — no undo/archive feature yet.
-
-On very small resolutions, Summary cards may look compact (needs responsive tweaks).
-
-## 🧪 Test Checklist
-
-Open/close Menu — panel should be fully hidden when closed.
-
-Add tasks across multiple days, start/stop timers, open All Task Summary — totals and per-day breakdown should be correct.
-
-Open Notepad, add text, save, switch days, and return — note should persist per date.
-
-Hover over buttons — color change should be smooth and responsive.
-
-Delete a task — confirmation prompt should appear, task removed from JSON.
-
-Corrupt tasks_data.json manually, restart — app should back up the file and load with empty data; error in error.log.
-
-Export CSV — open tasks_aggregated.csv to verify aggregated stats.
-
-## 📝 Version & File Info
-
-Version: v1.2
-
-Main file: task_timer_kivy_v1.2.py
-
-Data file: tasks_data.json (backups as tasks_data.json.backup.<timestamp>)
-
-Upgrade tip: commit changes and back up tasks_data.json before replacing files.
-
-## ✨ Suggested Next Features
-
-Undo / Archive instead of permanent delete.
-
-Search & Filter in Summary (by task name or date range).
-
-Charts (daily/weekly hours per task).
-
-Customizable theme (colors, hover speed, corner radius).
-
-Optional cloud sync with encryption.
-
-## ▶️ Usage
-Run the application with:
+```bash
+pip install matplotlib
 ```
-python task_timer_kivy.py
+If your Kivy version does not support RoundedRectangle, the app will fall back to plain rectangles — updating Kivy is recommended for full styling.
+
+## 📁 Data files
+```bach
+{
+  "2025-08-18": {
+    "German": {
+      "seconds": 3600,
+      "description": "Vocabulary drill"
+    },
+    "Programming": {
+      "seconds": 7200,
+      "description": "Refactoring module X"
+    },
+    "_note": "Short daily note for this date"
+  },
+  "2025-08-17": {
+    ...
+  }
+}
 ```
+## 🧭 How to use (quick)
+
+Add a task name → click Add.
+
+Use Start / Stop to measure working time.
+
+Click Edit to open the description editor (black text on white background for readability).
+
+Navigate dates with Prev Day / Next Day.
+
+Open Menu → choose Notepad, All Task Summary, Charts, or Export CSV.
+
+Notepad saves per-date notes (_note in JSON).
+
+Charts builds and displays the line chart and a set of pie charts (one per day with tasks). Click a pie to open a larger popup with a legend.
+
+## 🧾 Changelog (highlight)
+v1.3
+
+Added Charts (line chart + per-day pies using matplotlib).
+
+Chart visuals: white background + cold color palette.
+
+UI integration for charts, saved PNGs in charts_images/.
+
+v1.2
+
+Added Notepad, redesigned summary, rounded buttons with hover, Neon theme, export CSV, robust navigation, safe JSON handling, error logging.
+
 
 ## 📜 License
 This project is licensed under the MIT License — feel free to use and modify it.
